@@ -47,6 +47,10 @@ menu {
     }
 }
 
+.hover :hover {
+    color: rgba(255, 255, 255, 0.485);
+}
+
 .map, .phone {
     display: flex;
     align-items: center;
