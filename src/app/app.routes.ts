@@ -8,6 +8,7 @@ import { PersonalDataComponent } from './personal-data/personal-data.component';
 import { AccessibilityComponent } from './accessibility/accessibility.component';
 import { ContactComponent } from './contact/contact.component';
 import { CookieManagementComponent } from './cookie-management/cookie-management.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
     {path:"", component: HomeComponent},
@@ -16,7 +17,8 @@ export const routes: Routes = [
     {path: "personal-data", component: PersonalDataComponent},
     {path: "accessibility", component: AccessibilityComponent},
     {path: "contact", component: ContactComponent},
-    {path: "cookie-management", component: CookieManagementComponent}
+    {path: "cookie-management", component: CookieManagementComponent},
+    {path: "**", component: NotFoundComponent}
 ];
 
 export const appRoutingProviders = [

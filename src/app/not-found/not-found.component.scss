@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    margin: 24px 0px 24px 0px;
+}
+
+h1 {
+    font-family: "Graphik", sans-serif;
+    color: #00497c;
+    font-weight: bolder;
+}
+
+p {
+    font-family: "Graphik", sans-serif;
+    color: #384050;
+    font-size: 20px;
+}
+
+.returnHome {
+    display: flex;
+    justify-content: center;
+}
+
+a {
+
+    text-align: center;
+    background-color: #0074c7;
+    text-decoration: none;
+    color: white;
+    border-style: none;
+    border-radius: 40px;
+    margin: 28px;
+    padding: 10px 30px 10px 30px;
+    max-width: 255px;
+    font-weight: 700;
+    font-size: 20px
+}
+
+a:hover {
+    background-color: #0074c777;
+    color: rgba(255, 255, 255, 0.52);
+}
