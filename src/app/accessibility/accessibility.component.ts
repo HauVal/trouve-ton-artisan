@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './accessibility.component.scss'
 })
 export class AccessibilityComponent {
-
+  title = 'Accéssibilité'
 }

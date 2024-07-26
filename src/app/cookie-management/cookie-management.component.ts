@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './cookie-management.component.scss'
 })
 export class CookieManagementComponent {
-
+  title = 'Gestion des cookies'
 }

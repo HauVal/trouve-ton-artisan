@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './personal-data.component.scss'
 })
 export class PersonalDataComponent {
-
+  title = 'Données Personnelles'
 }
