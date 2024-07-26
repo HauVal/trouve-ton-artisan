@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './craftsman-sheet.component.scss'
 })
 export class CraftsmanSheetComponent {
-
+  title = 'Présentation'
 }

@@ -1,0 +1,22 @@
+div {
+    display: flex;
+    border-radius: 40px;
+    box-shadow: 3px 3px 10px -3px grey;
+    background-color: white;
+    overflow: hidden;
+}
+    button {
+        border: none;
+        background-color: white;
+        margin: 5px;
+        padding: 5px;
+        width: 30px;
+        cursor: pointer;
+    }
+    
+    input {
+        all: unset;
+        flex-grow: 1;
+        padding: 10px 20px;
+    }
+    
