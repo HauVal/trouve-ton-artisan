@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>{{ categoryName }}</h2>
+  <h2>{{ categoryName || searchQuery }}</h2>
 
   <section *ngFor="let craftsman of craftsmen">
     <a [routerLink]="['/artisan', craftsman.id]">

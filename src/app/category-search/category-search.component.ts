@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CraftsmanDatasService } from '../craftsman-datas.service';
+import { CraftsmanDatasService, Craftsman } from '../craftsman-datas.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { Craftsman } from '../craftsman-datas.service';
 
 @Component({
   selector: 'app-category-search',
@@ -14,7 +13,7 @@ import { Craftsman } from '../craftsman-datas.service';
 })
 export class CategorySearchComponent implements OnInit {
   categoryName: string | null = '';
-  
+  searchQuery: string | null = '';
   craftsmen: Craftsman[] = [];
 
   constructor(
@@ -25,13 +24,25 @@ export class CategorySearchComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.categoryName = params.get('categoryName');
+      this.searchQuery = params.get('query');
       this.loadArtisans();
     });
   }
 
   loadArtisans(): void {
     this.craftsmanDatasService.getCraftsmen().subscribe(data => {
-      this.craftsmen = data.filter((craftsman: Craftsman) => craftsman.category === this.categoryName);
+      if (this.searchQuery) {
+        const query = this.searchQuery.toLowerCase();
+        this.craftsmen = data.filter((craftsman: Craftsman) =>
+          craftsman.name.toLowerCase().includes(query) ||
+          craftsman.specialty.toLowerCase().includes(query) ||
+          craftsman.location.toLowerCase().includes(query)
+        );
+      } else if (this.categoryName) {
+        this.craftsmen = data.filter((craftsman: Craftsman) =>
+          craftsman.category === this.categoryName
+        );
+      }
     });
   }
 
