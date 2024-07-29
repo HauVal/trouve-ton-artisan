@@ -1,76 +1,57 @@
 <div class="container">
   <h1>{{ title }}</h1>
 
-  <section>
-    <h2>Nom de l'artisan ou de l'entreprise</h2>
+<section>
+  <h2>{{ craftsman.name }}</h2>
 
-    <p>Note :</p>
-    <p>Spécialité</p>
-    <p>Localisation</p>
-    <p>A propos :</p>
-    <p class="about">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-      eleifend ante sem, id volutpat massa fermentum nec. Praesent volutpat
-      scelerisque mauris, quis sollicitudin tellus sollicitudin.
-    </p>
-    <p>Site web : <a href="">site-entreprise.fr</a></p>
+  <p>Note :</p>
+  <p>
+    <span *ngFor="let starClass of getStars(craftsman?.note)" class="bi" [ngClass]="starClass"></span>
+  </p>
+  <p>Spécialité : {{ craftsman.specialty }}</p>
+  <p>Localisation : {{ craftsman.location }}</p>
+  <p>A propos :</p>
+  <p class="about">{{ craftsman.about }}</p>
+  <p>Site web : <a [href]="craftsman?.website" target="_blank">{{ craftsman.website }}</a></p>
 
-    <form action="#" method="post">
-      <h3>Contacter</h3>
+  <form action="#" method="post">
+    <h3>Contacter</h3>
 
-      <div class="labelInput">
-        <div class="formPosition col-sm-5">
-          <label for="lastName"
-            >Nom
-            <p class="color">*</p></label
-          >
-          <input type="text" />
-        </div>
-
-        <div class="formPosition col-sm-5">
-          <label for="firstName"
-            >Prénom
-            <p class="color">*</p></label
-          >
-          <input type="text" />
-        </div>
-      </div>
-
-      <div class="labelInput">
-        <div class="formPosition col-sm-5">
-          <label for="email"
-            >Email
-            <p class="color">*</p></label
-          >
-          <input type="text" />
-        </div>
-
-        <div class="formPosition col-sm-5">
-          <label for="postalCode"
-            >Code Postal
-            <p class="color">*</p></label
-          >
-          <input type="text" />
-        </div>
-      </div>
-
+    <div class="labelInput">
       <div class="formPosition col-sm-5">
-        <label for="object"
-          >Objet
-          <p class="color">*</p></label
-        >
+        <label for="lastName">Nom<p class="color">*</p></label>
         <input type="text" />
       </div>
 
       <div class="formPosition col-sm-5">
-        <label for="message"
-          >Message
-          <p class="color">*</p></label
-        >
-        <textarea name="message" id="message"></textarea>
+        <label for="firstName">Prénom<p class="color">*</p></label>
+        <input type="text" />
+      </div>
+    </div>
+
+    <div class="labelInput">
+      <div class="formPosition col-sm-5">
+        <label for="email">Email<p class="color">*</p></label>
+        <input type="text" />
       </div>
 
-      <button>Envoyer</button>
-    </form>
-  </section>
+      <div class="formPosition col-sm-5">
+        <label for="postalCode">Code Postal<p class="color">*</p></label>
+        <input type="text" />
+      </div>
+    </div>
+
+    <div class="formPosition col-sm-5">
+      <label for="object">Objet<p class="color">*</p></label>
+      <input type="text" />
+    </div>
+
+    <div class="formPosition col-sm-5">
+      <label for="message">Message<p class="color">*</p></label>
+      <textarea name="message" id="message"></textarea>
+    </div>
+
+    <button>Envoyer</button>
+  </form>
+</section>
 </div>

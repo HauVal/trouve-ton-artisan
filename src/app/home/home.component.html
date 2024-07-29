@@ -24,14 +24,18 @@
   <section>
     <h2>Les trois artisans du mois : </h2>
 
-    <a href="">
-      <div class="craftsmanInfo">
-        <h3>Nom de l'artisan ou de l'entreprise</h3>
-        <p>Note :</p>
-        <p>Spécialité</p>
-        <p>Localisation</p>
-      </div>
-    </a>
-    
+    <div *ngFor="let craftsman of topCraftsmen">
+      <a [routerLink]="['/artisan', craftsman.id]">
+        <div class="craftsmanInfo">
+          <h3>{{ craftsman.name }}</h3>
+          <p>Note : 
+            <span *ngFor="let starClass of getStars(craftsman.note)" class="bi" [ngClass]="starClass"></span>
+          </p>
+          <p>Spécialité : {{ craftsman.specialty }}</p>
+          <p>Localisation : {{ craftsman.location }}</p>
+        </div>
+      </a>
+    </div>
+
   </section>
 </div>
