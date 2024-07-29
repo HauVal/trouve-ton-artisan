@@ -13,7 +13,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
     {path:"", component: HomeComponent},
-    {path:"category", component: CategorySearchComponent},
+    {path:"category/:categoryName", component: CategorySearchComponent},
     {path:"artisan/:id", component:CraftsmanSheetComponent},
     {path: "legal-notice", component: LegalNoticeComponent},
     {path: "personal-data", component: PersonalDataComponent},

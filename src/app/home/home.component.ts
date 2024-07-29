@@ -24,7 +24,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.craftsmanDatasService.getCraftsmen().subscribe(data => {
-      this.topCraftsmen = data.filter((craftsman: any) => craftsman.top).slice(0, 3);
+      //Filtre les artisan avec top: true
+      this.topCraftsmen = data.filter((craftsman: any) => craftsman.top);
     });
   }
 

@@ -1,10 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
+export interface Craftsman {
+  id: number;
+  name: string;
+  category: string;
+  note: number;
+  specialty: string;
+  location: string;
+  about: string;
+  website: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class CraftsmanDatasService {
+
+  //insertion des données du fichiers datas.json//
   craftsmen = [
     {
       id: 1,

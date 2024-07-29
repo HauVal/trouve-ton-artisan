@@ -33,15 +33,15 @@ export class CraftsmanSheetComponent implements OnInit{
     const halfStar = rating % 1 >= 0.5;
     
     for (let i = 0; i < fullStars; i++) {
-      stars.push('bi-star-fill'); // Utilisez une classe appropriée pour une étoile pleine
+      stars.push('bi-star-fill'); // étoile pleine
     }
 
     if (halfStar) {
-      stars.push('bi-star-half'); // Utilisez une classe appropriée pour une étoile à moitié remplie
+      stars.push('bi-star-half'); // étoile à moitié remplie
     }
 
     while (stars.length < 5) {
-      stars.push('bi-star'); // Utilisez une classe appropriée pour une étoile vide
+      stars.push('bi-star'); // étoile vide
     }
 
     return stars;

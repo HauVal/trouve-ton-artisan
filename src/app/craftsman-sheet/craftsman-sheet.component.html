@@ -1,11 +1,7 @@
-<div class="container">
-  <h1>{{ title }}</h1>
-
-<section>
+<section class="container">
   <h2>{{ craftsman.name }}</h2>
 
-  <p>Note :</p>
-  <p>
+  <p>Note :
     <span *ngFor="let starClass of getStars(craftsman?.note)" class="bi" [ngClass]="starClass"></span>
   </p>
   <p>Spécialité : {{ craftsman.specialty }}</p>
@@ -54,4 +50,3 @@
     <button>Envoyer</button>
   </form>
 </section>
-</div>

@@ -1,15 +1,16 @@
 <div class="container">
-    <h2>Catégorie/recherche</h2>
+  <h2>{{ categoryName }}</h2>
 
-    <section>
-        <a href="">
-            <div class="craftsmanInfo">
-              <h3>Nom de l'artisan ou de l'entreprise</h3>
-              <p>Note :</p>
-              <p>Spécialité</p>
-              <p>Localisation</p>
-            </div>
-          </a>
-    </section>
+  <section *ngFor="let craftsman of craftsmen">
+    <a [routerLink]="['/artisan', craftsman.id]">
+      <div class="craftsmanInfo">
+        <h3>{{ craftsman.name }}</h3>
+        <p>Note : <span *ngFor="let starClass of getStars(craftsman.note)" class="bi" [ngClass]="starClass"></span></p>
+        <p>Spécialité : {{ craftsman.specialty }}</p>
+        <p>Localisation : {{ craftsman.location }}</p>
+      </div>
+    </a>
+  </section>
 </div>
+
 
