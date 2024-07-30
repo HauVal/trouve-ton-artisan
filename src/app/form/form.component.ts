@@ -36,4 +36,6 @@ export class FormComponent {
 
     this.successMessage = 'Votre mail a bien été envoyé';
   }
+
+  
 }

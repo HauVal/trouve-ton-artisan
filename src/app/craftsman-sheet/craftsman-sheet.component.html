@@ -9,13 +9,13 @@
       [ngClass]="starClass"
     ></span>
   </p>
-  <p>Spécialité : {{ craftsman.specialty }}</p>
-  <p>Localisation : {{ craftsman.location }}</p>
+  <p>Spécialité : <strong> {{ craftsman.specialty }}</strong></p>
+  <p>Localisation : <strong>{{ craftsman.location }}</strong></p>
   <p>A propos :</p>
-  <p class="about">{{ craftsman.about }}</p>
+  <p class="about"><strong>{{ craftsman.about }}</strong></p>
   <p>
     Site web :
-    <a [href]="craftsman.website" target="_blank">{{ craftsman.website }}</a>
+    <strong><a [href]="craftsman.website" target="_blank">{{ craftsman.website }}</a></strong>
   </p>
 
 <app-form></app-form>

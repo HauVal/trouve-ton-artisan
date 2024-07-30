@@ -6,8 +6,8 @@
       <div class="craftsmanInfo">
         <h3>{{ craftsman.name }}</h3>
         <p>Note : <span *ngFor="let starClass of getStars(craftsman.note)" class="bi" [ngClass]="starClass"></span></p>
-        <p>Spécialité : {{ craftsman.specialty }}</p>
-        <p>Localisation : {{ craftsman.location }}</p>
+        <p>Spécialité : <strong> {{ craftsman.specialty }}</strong></p>
+        <p>Localisation : <strong>{{ craftsman.location }}</strong> </p>
       </div>
     </a>
   </section>
