@@ -1,52 +1,22 @@
 <section class="container">
   <h2>{{ craftsman.name }}</h2>
 
-  <p>Note :
-    <span *ngFor="let starClass of getStars(craftsman?.note)" class="bi" [ngClass]="starClass"></span>
+  <p>
+    Note :
+    <span
+      *ngFor="let starClass of getStars(craftsman?.note)"
+      class="bi"
+      [ngClass]="starClass"
+    ></span>
   </p>
   <p>Spécialité : {{ craftsman.specialty }}</p>
   <p>Localisation : {{ craftsman.location }}</p>
   <p>A propos :</p>
   <p class="about">{{ craftsman.about }}</p>
-  <p>Site web : <a [href]="craftsman?.website" target="_blank">{{ craftsman.website }}</a></p>
+  <p>
+    Site web :
+    <a [href]="craftsman.website" target="_blank">{{ craftsman.website }}</a>
+  </p>
 
-  <form action="#" method="post">
-    <h3>Contacter</h3>
-
-    <div class="labelInput">
-      <div class="formPosition col-sm-5">
-        <label for="lastName">Nom<p class="color">*</p></label>
-        <input type="text" />
-      </div>
-
-      <div class="formPosition col-sm-5">
-        <label for="firstName">Prénom<p class="color">*</p></label>
-        <input type="text" />
-      </div>
-    </div>
-
-    <div class="labelInput">
-      <div class="formPosition col-sm-5">
-        <label for="email">Email<p class="color">*</p></label>
-        <input type="text" />
-      </div>
-
-      <div class="formPosition col-sm-5">
-        <label for="postalCode">Code Postal<p class="color">*</p></label>
-        <input type="text" />
-      </div>
-    </div>
-
-    <div class="formPosition col-sm-5">
-      <label for="object">Objet<p class="color">*</p></label>
-      <input type="text" />
-    </div>
-
-    <div class="formPosition col-sm-5">
-      <label for="message">Message<p class="color">*</p></label>
-      <textarea name="message" id="message"></textarea>
-    </div>
-
-    <button>Envoyer</button>
-  </form>
+<app-form></app-form>
 </section>

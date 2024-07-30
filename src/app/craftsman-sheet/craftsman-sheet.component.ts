@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CraftsmanDatasService } from '../craftsman-datas.service';
 import { CommonModule } from '@angular/common';
+import { FormComponent } from '../form/form.component';
 
 @Component({
   selector: 'app-craftsman-sheet',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormComponent],
   templateUrl: './craftsman-sheet.component.html',
   styleUrl: './craftsman-sheet.component.scss'
 })

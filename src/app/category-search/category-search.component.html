@@ -1,8 +1,8 @@
 <div class="container">
   <h2>{{ categoryName || searchQuery }}</h2>
 
-  <section *ngFor="let craftsman of craftsmen">
-    <a [routerLink]="['/artisan', craftsman.id]">
+  <section *ngIf="craftsmen.length > 0; else noResults">
+    <a *ngFor="let craftsman of craftsmen" [routerLink]="['/artisan', craftsman.id]">
       <div class="craftsmanInfo">
         <h3>{{ craftsman.name }}</h3>
         <p>Note : <span *ngFor="let starClass of getStars(craftsman.note)" class="bi" [ngClass]="starClass"></span></p>
@@ -11,6 +11,10 @@
       </div>
     </a>
   </section>
+
+  <ng-template #noResults>
+    <p>Aucun artisan ne correspond à votre recherche.</p>
+  </ng-template>
 </div>
 
 

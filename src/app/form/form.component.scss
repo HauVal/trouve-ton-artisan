@@ -1,40 +1,3 @@
-h1 {
-    font-family: "Graphik", sans-serif;
-    color: #00497c;
-    font-weight: bold;
-    margin: 20px 0px 20px 0px;
-}
-
-h2 {
-    font-family: "Graphik", sans-serif;
-    color: #00497c;
-    font-weight: 600;
-    font-size: 30px;
-    margin: 10px;
-}
-
-p {
-    font-family: "Graphik", sans-serif;
-    color: #384050;
-    margin: 0px 10px 10px 10px;
-}
-
-.about {
-    text-align: justify;
-    text-indent: 60px;
-}
-
-a {
-    text-decoration: none;
-    font-family: "Graphik", sans-serif;
-    color: #384050;
-}
-
-a:hover{
-    color: #38405066;
-    text-decoration: underline;
-}
-
 form {
     display: flex;
     flex-direction: column;
@@ -73,6 +36,16 @@ input, textarea {
 
 textarea {
     height: 200px;
+}
+
+small {
+    font-family: "Graphik", sans-serif;
+    color: #cd2c2e;
+}
+
+.success-message {
+    color: #82b864;
+    margin-top: 20px;
 }
 
 button {
