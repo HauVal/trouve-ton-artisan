@@ -1,15 +1,20 @@
 <div class="container">
-    <h2>Catégorie/recherche</h2>
+  <h2>{{ categoryName || searchQuery }}</h2>
 
-    <section>
-        <a href="">
-            <div class="craftsmanInfo">
-              <h3>Nom de l'artisan ou de l'entreprise</h3>
-              <p>Note :</p>
-              <p>Spécialité</p>
-              <p>Localisation</p>
-            </div>
-          </a>
-    </section>
+  <section *ngIf="craftsmen.length > 0; else noResults">
+    <a *ngFor="let craftsman of craftsmen" [routerLink]="['/artisan', craftsman.id]">
+      <div class="craftsmanInfo">
+        <h3>{{ craftsman.name }}</h3>
+        <p>Note : <span *ngFor="let starClass of getStars(craftsman.note)" class="bi" [ngClass]="starClass"></span></p>
+        <p>Spécialité : <strong> {{ craftsman.specialty }}</strong></p>
+        <p>Localisation : <strong>{{ craftsman.location }}</strong> </p>
+      </div>
+    </a>
+  </section>
+
+  <ng-template #noResults>
+    <p>Aucun artisan ne correspond à votre recherche.</p>
+  </ng-template>
 </div>
+
 

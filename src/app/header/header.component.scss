@@ -16,6 +16,10 @@ a {
     font-family: "Graphik", sans-serif;
 }
 
+.imgLogo {
+    width: 200px;
+}
+
 li :hover {
     color: #0074c77c;
 }
@@ -41,6 +45,9 @@ li a {
     color: #0074c7;
 }
 
+#navbarNav {
+    margin-bottom: 10px;
+}
 
 
 @media screen and (min-width : 992px) {
@@ -48,4 +55,9 @@ li a {
         display: flex;
         justify-content: end;
     }
+
+    .imgLogo {
+        width: 300px;
+    }
 }
+

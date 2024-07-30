@@ -1,0 +1,107 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <h3>Contacter</h3>
+
+  <div class="labelInput">
+    <div class="formPosition col-sm-5">
+      <label for="lastName"
+        >Nom
+        <p class="color">*</p></label
+      >
+      <input
+        type="text"
+        id="lastName"
+        formControlName="lastName"
+        [class.is-invalid]="isInvalidAndTouchedOrDirty(formGroup.controls.lastName)"
+      />
+      <small *ngIf="isInvalidAndTouchedOrDirty(formGroup.controls.lastName)">
+        Ce champ est requis
+      </small>
+    </div>
+
+    <div class="formPosition col-sm-5">
+      <label for="firstName"
+        >Prénom
+        <p class="color">*</p></label
+      >
+      <input
+        type="text"
+        id="fistName"
+        formControlName="firstName"
+        [class.is-invalid]="isInvalidAndTouchedOrDirty(formGroup.controls.firstName)"
+      />
+      <small *ngIf="isInvalidAndTouchedOrDirty(formGroup.controls.firstName)">
+        Ce champ est requis
+      </small>
+    </div>
+  </div>
+
+  <div class="labelInput">
+    <div class="formPosition col-sm-5">
+      <label for="email"
+        >Email
+        <p class="color">*</p></label
+      >
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        [class.is-invalid]="isInvalidAndTouchedOrDirty(formGroup.controls.email)"
+      />
+      <small *ngIf="isInvalidAndTouchedOrDirty(formGroup.controls.email)">
+        Ce champ est requis
+      </small>
+    </div>
+
+    <div class="formPosition col-sm-5">
+      <label for="postalCode"
+        >Code Postal
+        <p class="color">*</p></label
+      >
+      <input
+        type="text"
+        id="postalCode"
+        formControlName="postalCode"
+        [class.is-invalid]="isInvalidAndTouchedOrDirty(formGroup.controls.postalCode)"
+      />
+      <small *ngIf="isInvalidAndTouchedOrDirty(formGroup.controls.postalCode)">
+        Ce champ est requis et doit contenir 5 caractères
+      </small>
+    </div>
+  </div>
+
+  <div class="formPosition col-sm-5">
+    <label for="object"
+      >Objet
+      <p class="color">*</p></label
+    >
+    <input
+      type="text"
+      id="object"
+      formControlName="object"
+      [class.is-invalid]="isInvalidAndTouchedOrDirty(formGroup.controls.object)"
+    />
+    <small *ngIf="isInvalidAndTouchedOrDirty(formGroup.controls.object)">
+      Ce champ est requis
+    </small>
+  </div>
+
+  <div class="formPosition col-sm-5">
+    <label for="message"
+      >Message
+      <p class="color">*</p></label
+    >
+    <textarea
+      name="message"
+      id="message"
+      formControlName="message"
+      [class.is-invalid]="isInvalidAndTouchedOrDirty(formGroup.controls.message)"
+    ></textarea>
+    <small *ngIf="isInvalidAndTouchedOrDirty(formGroup.controls.object)">
+      Ce champ est requis
+    </small>
+  </div>
+
+  <small *ngIf="successMessage" class="success-message">{{ successMessage }}</small>
+  <input type="hidden" name="recipient" value="maildev">
+  <button type="submit">Envoyer</button>
+</form>
