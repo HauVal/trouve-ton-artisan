@@ -30,7 +30,6 @@ export class FormComponent {
     if (this.formGroup.invalid) {
       return;
     }
-    console.log(this.formGroup.value);
 
     this.formGroup.reset();
 
