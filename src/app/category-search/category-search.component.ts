@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './category-search.component.html',
-  styleUrl: './category-search.component.scss'
+  styleUrl: './category-search.component.scss',
 })
 export class CategorySearchComponent implements OnInit {
   categoryName: string | null = '';
@@ -22,7 +22,7 @@ export class CategorySearchComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe((params) => {
       this.categoryName = params.get('categoryName');
       this.searchQuery = params.get('query');
       this.loadArtisans();
@@ -30,17 +30,18 @@ export class CategorySearchComponent implements OnInit {
   }
 
   loadArtisans(): void {
-    this.craftsmanDatasService.getCraftsmen().subscribe(data => {
+    this.craftsmanDatasService.getCraftsmen().subscribe((data) => {
       if (this.searchQuery) {
         const query = this.searchQuery.toLowerCase();
-        this.craftsmen = data.filter((craftsman: Craftsman) =>
-          craftsman.name.toLowerCase().includes(query) ||
-          craftsman.specialty.toLowerCase().includes(query) ||
-          craftsman.location.toLowerCase().includes(query)
+        this.craftsmen = data.filter(
+          (craftsman: Craftsman) =>
+            craftsman.name.toLowerCase().includes(query) ||
+            craftsman.specialty.toLowerCase().includes(query) ||
+            craftsman.location.toLowerCase().includes(query)
         );
       } else if (this.categoryName) {
-        this.craftsmen = data.filter((craftsman: Craftsman) =>
-          craftsman.category === this.categoryName
+        this.craftsmen = data.filter(
+          (craftsman: Craftsman) => craftsman.category === this.categoryName
         );
       }
     });
@@ -54,7 +55,7 @@ export class CategorySearchComponent implements OnInit {
     return [
       ...Array(fullStars).fill('bi-star-fill'),
       ...Array(halfStar).fill('bi-star-half'),
-      ...Array(emptyStars).fill('bi-star')
+      ...Array(emptyStars).fill('bi-star'),
     ];
   }
 }

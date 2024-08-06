@@ -1,103 +1,105 @@
 h1 {
-    font-family: "Graphik", sans-serif;
-    color: #00497c;
-    font-weight: bold;
-    margin: 20px 0px 20px 0px;
+  font-family: "Graphik", sans-serif;
+  color: #00497c;
+  font-weight: bold;
+  margin: 20px 0px 20px 0px;
 }
 
 h2 {
-    font-family: "Graphik", sans-serif;
-    color: #00497c;
-    font-weight: 600;
-    font-size: 30px;
-    margin: 10px;
+  font-family: "Graphik", sans-serif;
+  color: #00497c;
+  font-weight: 600;
+  font-size: 30px;
+  margin: 10px;
 }
 
 p {
-    font-family: "Graphik", sans-serif;
-    color: #384050;
-    margin: 0px 10px 10px 10px;
+  font-family: "Graphik", sans-serif;
+  color: #384050;
+  margin: 0px 10px 10px 10px;
 }
 
 .about {
-    text-align: justify;
-    text-indent: 60px;
+  text-align: justify;
+  text-indent: 60px;
 }
 
 a {
-    text-decoration: none;
-    font-family: "Graphik", sans-serif;
-    color: #384050;
+  text-decoration: none;
+  font-family: "Graphik", sans-serif;
+  color: #384050;
 }
 
-a:hover{
-    color: #38405066;
-    text-decoration: underline;
+a:hover {
+  color: #38405066;
+  text-decoration: underline;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 h3 {
-    font-family: "Graphik", sans-serif;
-    color: #384050;
-    font-weight: 500;
-    margin: 20px 0px 20px 0px;
+  font-family: "Graphik", sans-serif;
+  color: #384050;
+  font-weight: 500;
+  margin: 20px 0px 20px 0px;
 }
 
-.formPosition, .labelInput {
-    display: flex;
-    flex-direction: column;
+.formPosition,
+.labelInput {
+  display: flex;
+  flex-direction: column;
 }
 
 label {
-    display: flex;
-    font-family: "Graphik", sans-serif;
-    color: #384050;
-    margin: 10px 0px 10px 0px;
+  display: flex;
+  font-family: "Graphik", sans-serif;
+  color: #384050;
+  margin: 10px 0px 10px 0px;
 }
 
 .color {
-    color: #cd2c2e;
-    margin: 0;
+  color: #cd2c2e;
+  margin: 0;
 }
 
-input, textarea {
-    border-radius: 40px;
-    border-color: #0074c7;
-    background-color: #f2f8fc;
-    padding: 3px 20px 3px 20px;
+input,
+textarea {
+  border-radius: 40px;
+  border-color: #0074c7;
+  background-color: #f2f8fc;
+  padding: 3px 20px 3px 20px;
 }
 
 textarea {
-    height: 200px;
+  height: 200px;
 }
 
 button {
-    font-family: "Graphik", sans-serif;
-    text-align: center;
-    background-color: #0074c7;
-    text-decoration: none;
-    color: white;
-    border-style: none;
-    border-radius: 40px;
-    margin: 2% 0px 10px 0px;
-    padding: 10px;
-    max-width: 150px;
-    font-weight: 700;
-    font-size: 20px
+  font-family: "Graphik", sans-serif;
+  text-align: center;
+  background-color: #0074c7;
+  text-decoration: none;
+  color: white;
+  border-style: none;
+  border-radius: 40px;
+  margin: 2% 0px 10px 0px;
+  padding: 10px;
+  max-width: 150px;
+  font-weight: 700;
+  font-size: 20px;
 }
 
 //tablette et écran supérieur uniquement//
-@media screen and (min-width : 768px) {
-    .labelInput {
-        display: flex;
-        flex-direction: row;
-    }
+@media screen and (min-width: 768px) {
+  .labelInput {
+    display: flex;
+    flex-direction: row;
+  }
 
-    .formPosition {
-        margin-right: 40px;
-    }
+  .formPosition {
+    margin-right: 40px;
+  }
 }

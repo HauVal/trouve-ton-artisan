@@ -7,11 +7,7 @@ import { CraftsmanDatasService } from '../craftsman-datas.service';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    RouterModule
-  ],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
@@ -23,7 +19,7 @@ export class HomeComponent implements OnInit {
   constructor(private craftsmanDatasService: CraftsmanDatasService) {}
 
   ngOnInit(): void {
-    this.craftsmanDatasService.getCraftsmen().subscribe(data => {
+    this.craftsmanDatasService.getCraftsmen().subscribe((data) => {
       //Filtre les artisan avec top: true
       this.topCraftsmen = data.filter((craftsman: any) => craftsman.top);
     });
@@ -37,7 +33,7 @@ export class HomeComponent implements OnInit {
     return [
       ...Array(fullStars).fill('bi-star-fill'),
       ...Array(halfStar).fill('bi-star-half'),
-      ...Array(emptyStars).fill('bi-star')
+      ...Array(emptyStars).fill('bi-star'),
     ];
   }
 }
