@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>{{title}}</h1>
+  <h1>{{ title }}</h1>
 
   <section>
     <h2>Comment trouver mon artisan ?</h2>
@@ -22,20 +22,28 @@
   </section>
 
   <section>
-    <h2>Les trois artisans du mois : </h2>
+    <h2>Les trois artisans du mois :</h2>
 
     <div *ngFor="let craftsman of topCraftsmen">
       <a [routerLink]="['/artisan', craftsman.id]">
         <div class="craftsmanInfo">
           <h3>{{ craftsman.name }}</h3>
-          <p>Note : 
-            <span *ngFor="let starClass of getStars(craftsman.note)" class="bi" [ngClass]="starClass"></span>
+          <p>
+            Note :
+            <span
+              *ngFor="let starClass of getStars(craftsman.note)"
+              class="bi"
+              [ngClass]="starClass"
+            ></span>
           </p>
-          <p>Spécialité : <strong>{{ craftsman.specialty }}</strong></p>
-          <p>Localisation : <strong>{{ craftsman.location }}</strong> </p>
+          <p>
+            Spécialité : <strong>{{ craftsman.specialty }}</strong>
+          </p>
+          <p>
+            Localisation : <strong>{{ craftsman.location }}</strong>
+          </p>
         </div>
       </a>
     </div>
-
   </section>
 </div>

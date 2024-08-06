@@ -9,10 +9,10 @@ import { FormComponent } from '../form/form.component';
   standalone: true,
   imports: [CommonModule, FormComponent],
   templateUrl: './craftsman-sheet.component.html',
-  styleUrl: './craftsman-sheet.component.scss'
+  styleUrl: './craftsman-sheet.component.scss',
 })
-export class CraftsmanSheetComponent implements OnInit{
-  title = 'Présentation'
+export class CraftsmanSheetComponent implements OnInit {
+  title = 'Présentation';
 
   craftsman: any;
 
@@ -22,9 +22,11 @@ export class CraftsmanSheetComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe((params) => {
       const craftsmanId = +params.get('id')!;
-      this.craftsman = this.craftsmanDatasService.craftsmen.find(p => p.id === craftsmanId);
+      this.craftsman = this.craftsmanDatasService.craftsmen.find(
+        (p) => p.id === craftsmanId
+      );
     });
   }
 
@@ -32,7 +34,7 @@ export class CraftsmanSheetComponent implements OnInit{
     const stars = [];
     const fullStars = Math.floor(rating);
     const halfStar = rating % 1 >= 0.5;
-    
+
     for (let i = 0; i < fullStars; i++) {
       stars.push('bi-star-fill'); // étoile pleine
     }

@@ -11,7 +11,9 @@
         type="text"
         id="lastName"
         formControlName="lastName"
-        [class.is-invalid]="isInvalidAndTouchedOrDirty(formGroup.controls.lastName)"
+        [class.is-invalid]="
+          isInvalidAndTouchedOrDirty(formGroup.controls.lastName)
+        "
       />
       <small *ngIf="isInvalidAndTouchedOrDirty(formGroup.controls.lastName)">
         Ce champ est requis
@@ -27,7 +29,9 @@
         type="text"
         id="fistName"
         formControlName="firstName"
-        [class.is-invalid]="isInvalidAndTouchedOrDirty(formGroup.controls.firstName)"
+        [class.is-invalid]="
+          isInvalidAndTouchedOrDirty(formGroup.controls.firstName)
+        "
       />
       <small *ngIf="isInvalidAndTouchedOrDirty(formGroup.controls.firstName)">
         Ce champ est requis
@@ -45,7 +49,9 @@
         type="email"
         id="email"
         formControlName="email"
-        [class.is-invalid]="isInvalidAndTouchedOrDirty(formGroup.controls.email)"
+        [class.is-invalid]="
+          isInvalidAndTouchedOrDirty(formGroup.controls.email)
+        "
       />
       <small *ngIf="isInvalidAndTouchedOrDirty(formGroup.controls.email)">
         Ce champ est requis
@@ -61,7 +67,9 @@
         type="text"
         id="postalCode"
         formControlName="postalCode"
-        [class.is-invalid]="isInvalidAndTouchedOrDirty(formGroup.controls.postalCode)"
+        [class.is-invalid]="
+          isInvalidAndTouchedOrDirty(formGroup.controls.postalCode)
+        "
       />
       <small *ngIf="isInvalidAndTouchedOrDirty(formGroup.controls.postalCode)">
         Ce champ est requis et doit contenir 5 caractères
@@ -94,14 +102,18 @@
       name="message"
       id="message"
       formControlName="message"
-      [class.is-invalid]="isInvalidAndTouchedOrDirty(formGroup.controls.message)"
+      [class.is-invalid]="
+        isInvalidAndTouchedOrDirty(formGroup.controls.message)
+      "
     ></textarea>
     <small *ngIf="isInvalidAndTouchedOrDirty(formGroup.controls.object)">
       Ce champ est requis
     </small>
   </div>
 
-  <small *ngIf="successMessage" class="success-message">{{ successMessage }}</small>
-  <input type="hidden" name="recipient" value="maildev">
+  <small *ngIf="successMessage" class="success-message">{{
+    successMessage
+  }}</small>
+  <input type="hidden" name="recipient" value="maildev" />
   <button type="submit">Envoyer</button>
 </form>

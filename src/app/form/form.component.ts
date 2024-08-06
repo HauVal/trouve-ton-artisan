@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -7,14 +12,18 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './form.component.html',
-  styleUrl: './form.component.scss'
+  styleUrl: './form.component.scss',
 })
 export class FormComponent {
   formGroup = new FormGroup({
     lastName: new FormControl('', [Validators.required]),
     firstName: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
-    postalCode: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(5)]),
+    postalCode: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5),
+      Validators.maxLength(5),
+    ]),
     object: new FormControl('', [Validators.required]),
     message: new FormControl('', [Validators.required]),
   });
@@ -22,7 +31,7 @@ export class FormComponent {
   successMessage: string | null = null;
 
   isInvalidAndTouchedOrDirty(formControl: FormControl) {
-    return formControl.invalid && (formControl.touched || formControl.dirty)
+    return formControl.invalid && (formControl.touched || formControl.dirty);
   }
 
   onSubmit() {
@@ -35,6 +44,4 @@ export class FormComponent {
 
     this.successMessage = 'Votre mail a bien été envoyé';
   }
-
-  
 }
